@@ -1,0 +1,24 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(a, b, c) {
+        const arr = [a, b, c];
+        const maxValue = Math.max(a, b, c);
+        const answer =
+          arr
+            .filter((item) => item !== maxValue)
+            .reduce((acc, curr) => acc + curr) >= maxValue
+            ? "yes"
+            : "no";
+
+        return answer;
+      }
+
+      console.log(solution(6, 7, 11));
+    </script>
+  </body>
+</html>

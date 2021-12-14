@@ -1,0 +1,22 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(arr) {
+        const answer = [];
+        const oddNum = arr.filter((item) => item % 2 !== 0);
+        const addNum = oddNum.reduce((acc, curr) => acc + curr);
+        const minNum = Math.min(...oddNum);
+        answer.push(addNum);
+        answer.push(minNum);
+        return answer;
+      }
+
+      arr = [12, 77, 38, 41, 53, 92, 85];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
