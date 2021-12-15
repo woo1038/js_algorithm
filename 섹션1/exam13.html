@@ -1,0 +1,21 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = s
+          .split("")
+          .map((item) =>
+            item == item.toUpperCase() ? item.toLowerCase() : item.toUpperCase()
+          )
+          .join("");
+        return answer;
+      }
+
+      console.log(solution("StuDY"));
+    </script>
+  </body>
+</html>
