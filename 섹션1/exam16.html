@@ -6,6 +6,7 @@
   <body>
     <script>
       function solution(s) {
+        // 문자열을 배열로 만든 후 중복 제거 후 다시 문자열로
         let answer = [...new Set(s.split(""))].join("");
         return answer;
       }
