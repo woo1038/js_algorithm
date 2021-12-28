@@ -1,0 +1,75 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      /* function solution(arr) {
+        let emptyValue = [];
+        for (let i = 0; i < arr.length; i++) {
+          let num1 = 0;
+          arr[i].map((item) => {
+            num1 += item;
+          });
+          emptyValue.push(num1);
+        }
+        const a = Math.max(...emptyValue);
+
+        emptyValue = [];
+        for (let i = 0; i < arr.length; i++) {
+          let num2 = 0;
+          for (let j = 0; j < arr.length; j++) {
+            num2 += arr[j][i];
+          }
+          emptyValue.push(num2);
+        }
+        const b = Math.max(...emptyValue);
+
+        emptyValue = [];
+        let num3 = 0;
+        for (let i = 0; i < arr.length; i++) {
+          num3 += arr[i][i];
+        }
+        let num4 = 0;
+        for (let i = 0; i < arr.length; i++) {
+          num4 += arr[i][4 - i];
+        }
+        const c = Math.max(num3, num4);
+        
+        let answer = Math.max(a, b, c);
+
+        return answer;
+      } */
+
+      function solution(arr) {
+        let answer = Number.MIN_SAFE_INTEGER;
+        let n = arr.length;
+        let sum1 = (sum2 = 0);
+        for (let i = 0; i < n; i++) {
+          sum1 = sum2 = 0;
+          for (let j = 0; j < n; j++) {
+            sum1 += arr[i][j];
+            sum2 += arr[j][i];
+          }
+          answer = Math.max(answer, sum1, sum2);
+        }
+        sum1 = sum2 = 0;
+        for (let i = 0; i < n; i++) {
+          sum1 += arr[i][i];
+          sum2 += arr[i][n - i - 1];
+        }
+        answer = Math.max(answer, sum1, sum2);
+        return answer;
+      }
+      let arr = [
+        [10, 13, 10, 12, 15],
+        [12, 39, 30, 23, 11],
+        [11, 25, 50, 53, 15],
+        [19, 27, 29, 37, 27],
+        [19, 13, 30, 13, 19],
+      ];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>

@@ -1,0 +1,19 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function solution(s) {
+        let answer = "NO";
+        s = s.toLowerCase();
+        if (s.split("").reverse().join("") == s) answer = "YES";
+        return answer;
+      }
+
+      let str = "goG";
+      console.log(solution(str));
+    </script>
+  </body>
+</html>
