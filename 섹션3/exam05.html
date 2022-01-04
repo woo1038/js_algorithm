@@ -6,13 +6,21 @@
   <body>
     <script>
       function solution(s) {
-        console.log(s);
-        let font = s[0];
-        let answer = [];
-        return answer;
+        const answer = [];
+        let cnt = 1;
+
+        for (let i = 0; i < s.length; i++) {
+          if (s[i] == s[i + 1]) {
+            cnt++;
+          } else {
+            answer.push([s[i], cnt]);
+            cnt = 1;
+          }
+        }
+        return answer.join("").replaceAll(",", "").replaceAll("1", "");
       }
 
-      let str = "KKHSSSSSSSE";
+      let str = "KHHHHSSSSSSSE";
       console.log(solution(str));
     </script>
   </body>
