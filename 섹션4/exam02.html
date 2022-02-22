@@ -1,0 +1,41 @@
+<html>
+  <head>
+    <meta charset="UTF-8" />
+    <title>출력결과</title>
+  </head>
+  <body>
+    <script>
+      function isPrime(num) {
+        if (num === 1) {
+          return false;
+        }
+
+        if (num === 2) {
+          return true;
+        }
+
+        for (let i = 2; i <= Math.floor(Math.sqrt(num)); i++) {
+          if (num % i === 0) {
+            return false;
+          }
+        }
+        return true;
+      }
+
+      function solution(arr) {
+        const result = [];
+        arr.map(
+          (item) =>
+            isPrime(parseInt(item.toString().split("").reverse().join(""))) &&
+            result.push(parseInt(item.toString().split("").reverse().join("")))
+        );
+        arr.map((item) => isPrime(item) && result.push(isPrime(item)));
+
+        return result;
+      }
+
+      let arr = [32, 55, 62, 20, 250, 370, 200, 30, 100];
+      console.log(solution(arr));
+    </script>
+  </body>
+</html>
